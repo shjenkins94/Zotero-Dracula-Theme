@@ -1,13 +1,49 @@
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
-*
-  border: 0 !important
+@import "dracula_colors.styl";
+// *
+//   border: 0 !important
+test-border = 2px solid test-color
+thin-border = 1px solid drac-color0
 
-//test color
-test-color = #FF0000 
-  
-/*change background color and text color of zotero toolbar and menubar*/
-// #zotero-toolbar,
+// change background color and text color of zotero toolbar and menubar
+// backgrounds that should be drac-background-alt
+#zotero-tb,
+#zotero-toolbar,
 #navigator-toolbox,
 #tab-bar-container
-  background: test-color !important
-  color: #FFFFFF !important
+  background: drac-background-alt
+
+/*change color of menu items in drop down menus back to drac-foreground*/
+#navigator-toolbox menu
+#manage-attachments-menu label,
+#developer-menu label,
+#layout-menu label,
+#note-font-size-menu label,
+#font-size-menu label,
+#debug-output-menu label,
+#new-item label
+  color: drac-foreground
+
+// Set pane color and search bar
+#zotero-pane
+  background: drac-background
+  color: test-color
+
+/*Change color of tags selector below collections tree*/
+#zotero-tag-selector-container
+  border-bottom: thin-border
+  border-top: thin-border
+
+.tag-selector-list-container,
+.tag-selector-item
+  background: drac-background-lighter !important
+  color: drac-foreground
+
+.tag-selector-item:hover
+  background: drac-cyan !important
+  color: drac-color0
+
+#zotero-tb-search
+  background-color: drac-background-lighter 
+  color: drac-foreground
+  border: thin-border 
