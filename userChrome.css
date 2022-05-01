@@ -1,21 +1,4 @@
 /*:::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::*/
-.tab-line {
-  -moz-appearance: checkbox !important;
-  background: #bd93f9 !important;
-  color: #50fa7b !important;
-  border-color: #f55 !important;
-  outline-color: #f1fa8c !important;
-  fill: #ff79c6 !important;
-  border: 2px solid #f55 !important;
-  outline: 4px solid #f1fa8c !important;
-}
-.tab-line label {
-  color: #ffb86c !important;
-  background: #8be9fd !important;
-}
-.tab-line:hover {
-  background: #8be9fd !important;
-}
 menu,
 menuitem {
   -moz-appearance: none;
@@ -71,4 +54,57 @@ I don't think you can actually get to this part
   -moz-appearance: none !important;
   height: 25px;
   padding: 0px 10px;
+}
+.tabs {
+  background: #282a36;
+}
+.tab {
+  color: #f8f8f2 !important;
+  background: #1e1f29 !important;
+  border-left: 0px solid #ff79c6 !important;
+  border-right: 1px solid #ff79c6 !important;
+}
+.tab:hover {
+  background: #44475a !important;
+}
+.tab:not(:focus) {
+  -moz-appearance: none !important;
+}
+.tab.selected:not(.highlighted) {
+  background: #1e1f29 !important;
+  border-top: 3px solid #ff79c6 !important;
+}
+.tab-close:hover {
+  background: #ff79c6 !important;
+}
+.toolbar {
+  background: #1e1f29 !important;
+}
+#zotero-tb-search {
+  -moz-appearance: none !important;
+  background-color: #282a36 !important;
+  color: #f8f8f2 !important;
+  border: 1px solid #ff79c6;
+}
+#zotero-pane {
+  background: #1e1f29;
+  color: #f55;
+}
+.tag-selector-list-container,
+.tag-selector-item {
+  background: #282a36 !important;
+}
+.tag-selector-item:hover {
+  background: #bd93f9 !important;
+  border: 0 !important;
+}
+#zotero-tag-selector-container {
+  border-bottom: 1px solid #21222c;
+  border-top: 1px solid #21222c;
+}
+#zotero-tag-selector-container input {
+  -moz-appearance: none;
+  background: #282a36;
+  border: 1px solid #ff79c6;
+  color: #f8f8f2;
 }

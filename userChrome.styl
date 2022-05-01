@@ -7,20 +7,15 @@
 thin-border = 1px solid drac-color0
 pink-border = 1px solid drac-pink
 
-if_testing = true
-// if_testing = false
+// if_testing = true
+if_testing = false
 important_ob = true
 // important_ob = false
 
 if if_testing
-  .tab-line
-  // #main-menubar > menu
+  .toolbar
     if important_ob
-      -moz-appearance: checkbox !important
-      // -webkit-appearance: none !important
-      // -o-appearance: none !important
-      // ms-user-select: none !important
-      // appearance: none !important
+      -moz-appearance: none !important
       background: drac-purple !important
       color: drac-green !important
       border-color: drac-red !important
@@ -32,8 +27,6 @@ if if_testing
       label
         color: drac-orange !important
         background: drac-cyan !important
-      &:hover
-        background: drac-color6 !important
     else
       -moz-appearance: none
       background: drac-purple
@@ -102,74 +95,73 @@ I don't think you can actually get to this part
   menuseparator
     background: drac-background
 
-// // Style the main menu buttons
+// Style the main menu buttons
 #main-menubar > menu
   -moz-appearance: none !important
   height:25px
   padding: 0px 10px
 
+// Toolbars
+// Change colors of tabs
+.tabs
+  background: drac-background
+
+.tab
+  color: drac-foreground !important
+  background: drac-background-darker !important
+  border-left: 0px solid drac-pink !important
+  border-right: 1px solid drac-pink !important
+  &:hover
+    background: drac-selection !important
+  &:not(:focus)
+    -moz-appearance: none !important
+  &.selected:not(.highlighted)
+    background: drac-background-darker !important
+    border-top: 3px solid drac-pink !important
+
+.tab-close:hover
+  background: drac-pink !important
+
+.toolbar
+  background: drac-background-darker !important
+
+#zotero-tb-search
+  -moz-appearance: none !important
+  background-color: drac-background !important
+  color: drac-foreground !important
+  border: pink-border 
+
+
+// Change colors of area underneath tabs
+#zotero-pane
+  background: drac-background-darker //!important
+  color: drac-red //!important
 
 
 
-// 
-// 
-// 
-// // 
-// // 
-// // Toolbars
-// // Change colors of tabs
-// .tab
-//   -moz-appearance: none !important
-//   color: drac-foreground !important
-//   background: drac-background !important
-//   border-left: 0px solid drac-pink !important
-//   border-right: 0px solid drac-pink !important
-//   &:hover
-//     background: drac-current-line !important
-//     border: 0px !important
-//   &:not(:focus)
-//     -moz-appearance: none !important
-//     background: drac-background-lighter
-//     border-top: 0px solid drac-pink !important
-//     border-left: 0px solid drac-pink !important
-//     border-right: 1px solid drac-pink !important
-//     border-radius: 0px !important
-//     border-bottom-left-radius: 0px !important
-//     border-bottom-right-radius: 0px !important
-//   &.selected:not(.highlighted)
-//     // color: drac-foreground !important
-//     background: drac-background-darker !important
-//     border-top: 3px solid drac-pink !important
-//     border-left: 0px solid drac-pink !important
-//     border-right: 1px solid drac-pink !important
-//     border-radius: 0px !important
-//     border-bottom-left-radius: 0px !important
-//     border-bottom-right-radius: 0px !important
-// 
-// .tab-close:hover
-//   background: drac-pink !important
-// //Change empty area next to tabs
-// 
-// .tabs
-//   background: drac-background
-//   border: pink-border
-// 
-// // Change main toolbar color
-// .toolbar
-//   border: 0
-//   background: drac-background-darker !important
-// 
-// 
-// 
-// 
-// // Change color of tabs when you hover over them
-// .tag-selector-item:hover
-//   background: drac-purple !important
-//   color: drac-foreground
-//   border: 0 !important
-// 
+// tag container
+.tag-selector-list-container
+.tag-selector-item
+  background:drac-background !important
+  
+// Change color of tabs when you hover over them
+.tag-selector-item:hover
+  background: drac-purple !important
+  border: 0 !important
+
+// Change search bar
+#zotero-tag-selector-container
+  border-bottom: thin-border
+  border-top: thin-border
+  input
+    -moz-appearance: none
+    background: drac-background
+    border: pink-border
+    color: drac-foreground
+
+
 // .row:hover
-//   background: drac-current-line
+  // background: drac-current-line
 //   color: drac-foreground
 // 
 // // Change these:
