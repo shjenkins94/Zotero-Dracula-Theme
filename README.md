@@ -47,3 +47,11 @@ To implement a dark theme in the Note Editor in Zotero 5 (credit to 10cks) follo
  
  Dark theme compatible with MacOS is available as a fork maintained by yiktungho:
  https://github.com/yiktungho/Zotero-Dark-Theme/tree/mac-patch
+
+
+
+# Stuff I can't figure out:
+How to change the background of checkboxes in the main menu
+
+Interesting stuff from integration.css
+button pictures

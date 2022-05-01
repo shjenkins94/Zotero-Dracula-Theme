@@ -1,49 +1,184 @@
-/*:::::::::::::::::::::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::::::::::::::::::::*/
+/*:::::::::::::::::::::::::::::::::: Zotero :::::::::::::::::::::::::::::::::*/
 @import "dracula_colors.styl";
+
 // *
 //   border: 0 !important
-test-border = 2px solid test-color
+
 thin-border = 1px solid drac-color0
+pink-border = 1px solid drac-pink
 
-// change background color and text color of zotero toolbar and menubar
-// backgrounds that should be drac-background-alt
-#zotero-tb,
-#zotero-toolbar,
-#navigator-toolbox,
-#tab-bar-container
-  background: drac-background-alt
+if_testing = true
+// if_testing = false
+important_ob = true
+// important_ob = false
 
-/*change color of menu items in drop down menus back to drac-foreground*/
-#navigator-toolbox menu
-#manage-attachments-menu label,
-#developer-menu label,
-#layout-menu label,
-#note-font-size-menu label,
-#font-size-menu label,
-#debug-output-menu label,
-#new-item label
+if if_testing
+  .tab-line
+  // #main-menubar > menu
+    if important_ob
+      -moz-appearance: checkbox !important
+      // -webkit-appearance: none !important
+      // -o-appearance: none !important
+      // ms-user-select: none !important
+      // appearance: none !important
+      background: drac-purple !important
+      color: drac-green !important
+      border-color: drac-red !important
+      outline-color: drac-yellow !important
+      fill: drac-pink !important
+      border: 2px solid drac-red !important
+      outline: 4px solid drac-yellow !important
+      // height: 22px !important
+      label
+        color: drac-orange !important
+        background: drac-cyan !important
+      &:hover
+        background: drac-color6 !important
+    else
+      -moz-appearance: none
+      background: drac-purple
+      color: drac-green
+      border: 2px solid drac-red
+      label
+        color: drac-orange
+        background: drac-cyan
+
+// This theme works best with the Dracula GTK drac-pink accent theme for now.
+
+// Generic stuff that applies to multiple sections:
+
+// Menus:
+// Changes menu text color
+menu
+menuitem
+  -moz-appearance: none
   color: drac-foreground
+  padding: 5px 0px
+  &[disabled="true"]
+    color: drac-comment
 
-// Set pane color and search bar
-#zotero-pane
-  background: drac-background
-  color: test-color
+// Changes hover color (except for checkboxes)
+menu:hover
+menu[open="true"]
+menuitem:hover
+menuitem[_moz-menuactive="true"]
+  -moz-appearance: none
+  padding: 5px 0px
+  background: drac-selection
+  
+// Changes color of checkboxes to white
+menuitem[type="checkbox"]
+  & > .menu-iconic-text
+    padding-left: 5px
+  & > .menu-iconic-left
+    -moz-appearance: checkbox
+    padding: 7px 0px 0px 0px
 
-/*Change color of tags selector below collections tree*/
-#zotero-tag-selector-container
-  border-bottom: thin-border
-  border-top: thin-border
+menupopup
+	-moz-appearance: none !important;
+	padding: 8px 2px 8px 2px
+	// background-color: #2B2B2B !important;
+	// border: 1px #A0A0A0 solid !important;
+	// min-width: 280px !important;
 
-.tag-selector-list-container,
-.tag-selector-item
-  background: drac-background-lighter !important
-  color: drac-foreground
+menuseparator
+	-moz-appearance: none
+	border: none
+	padding: .5px 0px .5px 0px
+	margin: 4px 8px
 
-.tag-selector-item:hover
-  background: drac-cyan !important
-  color: drac-color0
+/*
+Starting from the top of the window:
+// Top part that says Zotero
+I don't think you can actually get to this part
+*/
+// Bar with file edit view etc.
+#navigator-toolbox
+  -moz-appearance: none
+  background: drac-background-darker // Changes color of whole bar
+  menupopup
+    -moz-appearance: none !important
+    background: drac-background-darker
+  menuseparator
+    background: drac-background
 
-#zotero-tb-search
-  background-color: drac-background-lighter 
-  color: drac-foreground
-  border: thin-border 
+// // Style the main menu buttons
+#main-menubar > menu
+  -moz-appearance: none !important
+  height:25px
+  padding: 0px 10px
+
+
+
+
+// 
+// 
+// 
+// // 
+// // 
+// // Toolbars
+// // Change colors of tabs
+// .tab
+//   -moz-appearance: none !important
+//   color: drac-foreground !important
+//   background: drac-background !important
+//   border-left: 0px solid drac-pink !important
+//   border-right: 0px solid drac-pink !important
+//   &:hover
+//     background: drac-current-line !important
+//     border: 0px !important
+//   &:not(:focus)
+//     -moz-appearance: none !important
+//     background: drac-background-lighter
+//     border-top: 0px solid drac-pink !important
+//     border-left: 0px solid drac-pink !important
+//     border-right: 1px solid drac-pink !important
+//     border-radius: 0px !important
+//     border-bottom-left-radius: 0px !important
+//     border-bottom-right-radius: 0px !important
+//   &.selected:not(.highlighted)
+//     // color: drac-foreground !important
+//     background: drac-background-darker !important
+//     border-top: 3px solid drac-pink !important
+//     border-left: 0px solid drac-pink !important
+//     border-right: 1px solid drac-pink !important
+//     border-radius: 0px !important
+//     border-bottom-left-radius: 0px !important
+//     border-bottom-right-radius: 0px !important
+// 
+// .tab-close:hover
+//   background: drac-pink !important
+// //Change empty area next to tabs
+// 
+// .tabs
+//   background: drac-background
+//   border: pink-border
+// 
+// // Change main toolbar color
+// .toolbar
+//   border: 0
+//   background: drac-background-darker !important
+// 
+// 
+// 
+// 
+// // Change color of tabs when you hover over them
+// .tag-selector-item:hover
+//   background: drac-purple !important
+//   color: drac-foreground
+//   border: 0 !important
+// 
+// .row:hover
+//   background: drac-current-line
+//   color: drac-foreground
+// 
+// // Change these:
+// 
+// // .notes-list-container
+// // .note-row
+// // .note-row .date
+// // .more-row
+// // .note-row:hover,
+// // .more-row:hover
+
+// check viewer.css
